@@ -52,3 +52,7 @@ sed -i 's#REPO="$BASEDIR"/lib#REPO=/usr/share/jeo#g' $bin_dir/jeo
 %{_datadir}/jeo
 %{_defaultdocdir}
 
+%changelog
+* Mon Nov 11 2013 Justin Deoliveira <jdeolive@boundlessgeo.com> - 0.1
+- initial package for version 0.1
+
