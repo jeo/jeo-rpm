@@ -1,6 +1,6 @@
 Name: jeo
 Version: 0.1
-Release: 1
+Release: 1%{?dist}
 Summary: Lightweight spatial library for Java. 
 Group: Applications/Engineering
 License: Apache Software License.
