@@ -47,7 +47,7 @@ sed -i 's#REPO="$BASEDIR"/lib#REPO=/usr/share/jeo#g' $bin_dir/jeo
 
 %files
 %defattr(-,root,root,-)
-%{_bindir}
+%{_bindir}/jeo
 %{_datadir}/jeo
 %{_defaultdocdir}
 
