@@ -16,5 +16,5 @@ following contents:
 ## Building
 
 To build the package simply run the `build.sh` command in the root of this 
-repository.
+repository. Upon success the jeo rpm should be located in `rpmbuild/RPMS/noarch`. 
 
