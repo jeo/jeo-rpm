@@ -8,7 +8,7 @@ URL: https://jeo.github.io
 Source: http://ares.boundlessgeo.com/${name}/release/%{name}-%{version}-cli.zip
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-%(%{__id_u} -n)
-BuildRequires: unzip
+BuildRequires: unzip, sed
 
 %description
 A library providing low level spatial capabilities with a command line interface.
@@ -22,18 +22,26 @@ name=$RPM_PACKAGE_NAME
 ver=$RPM_PACKAGE_VERSION
 
 src_dir=$RPM_BUILD_DIR/$name-$ver
-root_dir=$RPM_BUILD_ROOT%{_datadir}/$name
+
+bin_dir=$RPM_BUILD_ROOT%{_bindir}
+lib_dir=$RPM_BUILD_ROOT%{_datadir}/$name
 doc_dir=$RPM_BUILD_ROOT%{_defaultdocdir}/$name-$ver
 
-rm -rf $root_dir $doc_dir
-mkdir -p $root_dir 
+rm -rf $bin_dir $lib_dir $doc_dir 
+mkdir -p $bin_dir
+mkdir -p $lib_dir 
 mkdir -p $doc_dir
 
-cp $src_dir/lib/* $root_dir
+cp $src_dir/bin/jeo $bin_dir
+cp $src_dir/lib/* $lib_dir
 cp $src_dir/*.txt $doc_dir
+
+# patch the binary to point to the right lib dir
+sed -i 's#REPO="$BASEDIR"/lib#REPO=/usr/share/jeo#g' $bin_dir/jeo
 
 %files
 %defattr(-,root,root,-)
+%{_bindir}
 %{_datadir}/jeo
 %{_defaultdocdir}
 
