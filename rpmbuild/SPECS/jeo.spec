@@ -7,6 +7,8 @@ License: Apache Software License.
 URL: https://jeo.github.io
 Source: http://ares.boundlessgeo.com/${name}/release/%{name}-%{version}-cli.zip
 
+Requires: java-1.6.0-openjdk | java-1.7.0-openjdk
+
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-%(%{__id_u} -n)
 BuildRequires: unzip, sed
 
