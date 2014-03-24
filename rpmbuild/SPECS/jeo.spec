@@ -1,5 +1,5 @@
 Name: jeo
-Version: 0.2
+Version: 0.3
 Release: 1%{?dist}
 Summary: Lightweight spatial library for Java. 
 Group: Applications/Engineering
@@ -53,6 +53,8 @@ sed -i 's#REPO="$BASEDIR"/lib#REPO=/usr/share/jeo#g' $bin_dir/jeo
 %{_defaultdocdir}
 
 %changelog
+* Mon Mar 24 2014 Justin Deoliveira <jdeolive@boundlessgeo.com> - 0.3
+- new upstream release
 * Mon Dec 06 2013 Justin Deoliveira <jdeolive@boundlessgeo.com> - 0.2
 - new upstream release
 * Mon Nov 11 2013 Justin Deoliveira <jdeolive@boundlessgeo.com> - 0.1
