@@ -43,8 +43,9 @@ cp -R $src_dir/ext $lib_dir
 
 tar xzvf $RPM_SOURCE_DIR/gdaljni-*.tgz -C $ext_dir
 
-# patch the binary to point to the right lib dir
+# patch the binary to point to the right lib and ext dirs
 sed -i 's#REPO="$BASEDIR"/lib#REPO=/usr/share/jeo#g' $bin_dir/jeo
+sed -i 's#\(java.library.path=\)\(.*\)"#\1\$REPO/ext"#g' $bin_dir/jeo
 
 %files
 %defattr(-,root,root,-)
