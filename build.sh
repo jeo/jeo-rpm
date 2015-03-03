@@ -21,7 +21,7 @@ ver=`cat $build_root/SPECS/jeo.spec | grep "Version:" | sed 's/Version: *//g'`
 pushd $build_root/SOURCES
 set +e; rm *; set -e
 wget https://github.com/jeo/jeo-cli/releases/download/$ver/jeo-$ver-cli.zip
-wget https://github.com/jeo/jeo-cli/releases/download/$ver/gdaljni-1.9.2-${dist}-${arch}.tgz
+wget https://github.com/jeo/jeo-cli/releases/download/$ver/gdaljni-1.9.2-el6-${arch}.tgz
 popd
 
 # clean out the build root
