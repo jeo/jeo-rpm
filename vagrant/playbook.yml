@@ -1,0 +1,28 @@
+- hosts: all
+  tasks:
+  - name: ensure selinux python bindings present
+    yum: name=libselinux-python state=present
+    sudo: yes
+
+  - name: ensure rpm-build installed 
+    yum: name=rpm-build state=present
+    sudo: yes
+
+  - name: ensure unzip installed 
+    yum: name=unzip state=present
+    sudo: yes
+
+  - name: ensure wget installed 
+    yum: name=wget state=present
+    sudo: yes
+    
+  - name: ensure git installed 
+    yum: name=git state=present
+    sudo: yes
+
+  - name: update jeo-rpm repository
+    git: repo=https://github.com/jeo/jeo-rpm.git
+         dest=/home/vagrant/jeo-rpm
+
+  - name: ensure rpm macros file in place
+    copy: src=rpmmacros dest=/home/vagrant/.rpmmacros
