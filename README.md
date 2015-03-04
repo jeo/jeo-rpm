@@ -39,7 +39,7 @@ page for details on installing GDAL on your platform.
 ## Prerequisites
 
 Building the rpm package requires a system with `rpmbuild` installed and 
-configured. The [vagrant] directory contains a number of vagrant box 
+configured. The [vagrant](vagrant) directory contains a number of vagrant box 
 configurations that make it easy to set up such an environment.
 
 Setting up an environment manually is also straight forward. The following 
